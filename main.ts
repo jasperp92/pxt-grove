@@ -514,7 +514,7 @@ namespace grove {
     //% pin.fieldOptions.tooltips="false" pin.fieldOptions.width="250"
     //% group="Moisture" pin.defl=AnalogPin.C16
     export function measureMoisturePercent(pin: AnalogPin): number {
-        let percentValue = Math.map(pins.analogReadPin(pin), 0, 1023, 0, 100);
+        let percentValue = pins.analogReadPin(pin) / 1023 * 100;
         return Math.round(percentValue);
     }
 
